@@ -3,43 +3,60 @@ import 'package:flutter/material.dart';
 class botones_widget extends StatelessWidget {
   String c;
 
-  botones_widget({superkey, required this.c});
+  botones_widget({required this.c});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
-        //color: getColor(c),
-        color: getColor(c),
+    return TextButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStatePropertyAll<Color>(getColor(c)),
       ),
+      onPressed: () {},
       child: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(10),
         child: Center(
           child: Text(
             c,
             style: const TextStyle(
-              color: Colors.white,
-              fontSize: 15,
-            ),
+                color: Colors.white, fontSize: 18, fontWeight: FontWeight.w800),
           ),
         ),
       ),
-
-      // child: Padding(
-      //   padding: const EdgeInsets.all(5),
-      //   child: ElevatedButton(
-      //     onPressed: () {},
-      //     child: Text(
-      //       c,
-      //       style: TextStyle(color: Colors.white),
-      //     ),
-      //     style: ButtonStyle(
-      //       backgroundColor: MaterialStatePropertyAll(getColor(c)),
-      //     ),
-      //   ),
-      // ),
     );
+    // return Container(
+
+    //   decoration: BoxDecoration(
+    //     borderRadius: BorderRadius.circular(25),
+    //     //color: getColor(c),
+    //     color: getColor(c),
+    //   ),
+    //   child: Padding(
+    //     padding: const EdgeInsets.all(20),
+    //     child: Center(
+    //       child: Text(
+    //         c,
+    //         style: const TextStyle(
+    //           color: Colors.white,
+    //           fontSize: 15,
+    //         ),
+    //       ),
+    //     ),
+    //   ),
+
+    //   // child: Padding(
+    //   //   padding: const EdgeInsets.all(5),
+    //   //   child: ElevatedButton(
+    //   //     onPressed: () {},
+    //   //     child: Text(
+    //   //       c,
+    //   //       style: TextStyle(color: Colors.white),
+    //   //     ),
+    //   //     style: ButtonStyle(
+    //   //       backgroundColor: MaterialStatePropertyAll(getColor(c)),
+    //   //     ),
+    //   //   ),
+    //   // ),
+    // );
   }
 
   Color getColor(String valor) {

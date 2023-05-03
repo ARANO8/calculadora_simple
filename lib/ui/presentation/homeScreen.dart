@@ -23,9 +23,10 @@ class home_screen extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
+              //aqui empieza la parte donde se muestran los datos
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.5,
-                width: double.infinity,
+                width: MediaQuery.of(context).size.width,
               )
             ],
           ),
@@ -39,7 +40,10 @@ class home_screen extends StatelessWidget {
                 //este row es para los parentesis
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [botones_widget(c: "("), botones_widget(c: ")")],
+                  children: [
+                    SizedBox(width: 170, child: botones_widget(c: "(")),
+                    SizedBox(width: 170, child: botones_widget(c: ")"))
+                  ],
                 ),
                 const SizedBox(
                   height: 10,
@@ -97,7 +101,6 @@ class home_screen extends StatelessWidget {
                       ],
                     ),
                     //Este column alberga todos los simbolos
-
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -106,6 +109,9 @@ class home_screen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             botones_widget(c: "-"),
+                            const SizedBox(
+                              width: 10,
+                            ),
                             botones_widget(c: "/")
                           ],
                         ),
@@ -115,13 +121,30 @@ class home_screen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            // ElevatedButton(
-                            //   onPressed: () {},
-                            //   child: Text(
-                            //     "+",
-                            //   ),
-                            // ),
-                            botones_widget(c: "+"),
+                            SizedBox(
+                              height: 130,
+                              child: TextButton(
+                                  style: const ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStatePropertyAll<Color>(
+                                              Colors.teal)),
+                                  onPressed: () {},
+                                  child: const Padding(
+                                    padding: EdgeInsets.all(10),
+                                    child: Center(
+                                      child: Text(
+                                        '+',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ),
+                                  )),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ), //botones_widget(c: "+"),
                             Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -138,7 +161,27 @@ class home_screen extends StatelessWidget {
                         const SizedBox(
                           height: 10,
                         ),
-                        botones_widget(c: "=")
+                        SizedBox(
+                          width: 130,
+                          child: TextButton(
+                              style: const ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStatePropertyAll<Color>(
+                                          Colors.teal)),
+                              onPressed: () {},
+                              child: const Padding(
+                                padding: EdgeInsets.all(10),
+                                child: Center(
+                                  child: Text(
+                                    '=',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              )),
+                        ),
                       ],
                     )
                   ],
